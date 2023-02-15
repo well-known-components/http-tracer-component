@@ -26,7 +26,7 @@ There are many ways to do this, but the easiest is to wrap the fetch function to
 ```ts
 const fetch = (url: string, init?: nodeFetch.RequestInit) => {
   const headers: nodeFetch.HeadersInit = { ...init?.headers }
-  const traceParent = tracer.getTraceChildString()
+  const traceParent = tracer.isInsideOfTraceSpan() ? tracer.getTraceChildString() : null
   if (traceParent) {
     ;(headers as { [key: string]: string }).traceparent = traceParent
     const traceState = tracer.getTraceStateString()
