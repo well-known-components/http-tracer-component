@@ -2,7 +2,8 @@
   "name": "@well-known-components/http-tracer-component",
   "version": "0.1.0",
   "description": "Add tracing spans to each request handler.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
