@@ -4,7 +4,7 @@ import { parseTraceParentHeader, parseTraceState } from './logic'
 import { IHttpTracerComponent } from './types'
 
 export function createHttpTracerComponent(components: {
-  server: IHttpServerComponent<IHttpServerComponent.DefaultContext<object>>
+  server: IHttpServerComponent<object>
   tracer: ITracerComponent
 }): IHttpTracerComponent {
   const { server, tracer } = components
