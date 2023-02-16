@@ -1,5 +1,4 @@
-import type { ITracerComponent } from '@well-known-components/tracer-component'
-import type { IHttpServerComponent } from '@well-known-components/interfaces'
+import type { ITracerComponent, IHttpServerComponent } from '@well-known-components/interfaces'
 import { createHttpTracerComponent } from '../src'
 import { parseTraceParentHeader } from '../src/logic'
 
@@ -20,6 +19,7 @@ beforeEach(() => {
   mockedGetTraceStateString = jest.fn()
   tracerComponentMock = {
     span: jest.fn().mockImplementation((_name, spanFunction) => spanFunction()),
+    isInsideOfTraceSpan: jest.fn(),
     getSpanId: jest.fn(),
     getTrace: jest.fn(),
     getTraceString: mockedGetTraceString,

@@ -1,5 +1,4 @@
-import type { IHttpServerComponent } from '@well-known-components/interfaces'
-import type { ITracerComponent, TraceContext } from '@well-known-components/tracer-component'
+import type { IHttpServerComponent, ITracerComponent, TraceContext } from '@well-known-components/interfaces'
 import { parseTraceParentHeader, parseTraceState } from './logic'
 import { IHttpTracerComponent } from './types'
 
