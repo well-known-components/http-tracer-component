@@ -1,4 +1,4 @@
-import { Trace } from '@well-known-components/tracer-component'
+import type { Trace } from '@well-known-components/interfaces'
 
 /**
  * Parses the tracestate header into an object.
@@ -44,9 +44,9 @@ export function parseTraceParentHeader(traceParent: string): Trace | null {
     parentIdIsInvalid
     ? null
     : {
-        version: traceParentProperties[0],
+        version: parseInt(traceParentProperties[0], 16),
         traceId: traceParentProperties[1],
         parentId: traceParentProperties[2],
-        traceFlags: traceParentProperties[3]
+        traceFlags: parseInt(traceParentProperties[3], 16)
       }
 }

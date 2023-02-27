@@ -63,10 +63,10 @@ describe('when parsing the trace parent header', () => {
   describe('and the header is well formatted', () => {
     it('should return a trace object', () => {
       expect(parseTraceParentHeader('00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01')).toEqual({
-        version: '00',
+        version: 0,
         traceId: '4bf92f3577b34da6a3ce929d0e0e4736',
         parentId: '00f067aa0ba902b7',
-        traceFlags: '01'
+        traceFlags: 1
       })
     })
   })
